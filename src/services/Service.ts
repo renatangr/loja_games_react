@@ -22,3 +22,14 @@ export const atualizar = async (url: string, dados: Object, setDados: Function) 
 export const deletar = async(url: string) => {
     await api.delete(url)
 }
+
+// Método adicional de busca
+
+export const buscarCategoriaNome = async (tipo: string, setDados: Function) => {
+    try {
+        const resposta = await api.get(`/categorias/tipo/${tipo}`);
+        setDados(resposta.data);
+    } catch (error) {
+        console.error("Erro ao buscar categoria pelo tipo:", error);
+    }
+};
