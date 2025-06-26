@@ -3,7 +3,7 @@ import CardCategorias from "../cardcategorias/CardCategorias";
 import { useEffect, useState } from "react";
 import type Categoria from "../../../models/Categoria";
 import { buscar } from "../../../services/Service";
-import { DNA } from "react-loader-spinner";
+import { Bars } from "react-loader-spinner";
 
 function ListaCategorias() {
 
@@ -14,11 +14,14 @@ function ListaCategorias() {
     const [categoria, setCategoria] = useState<Categoria[]>([])
 
     async function buscarCategorias() {
+        setIsLoading(true)
         try {
             await buscar('/categorias', setCategoria)
         } catch (error: any) {
             console.log(error)
         }
+
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -28,24 +31,19 @@ function ListaCategorias() {
     return (
         <>
             {isLoading && (
-                <DNA
+                <div className="flex items-center justify-center h-screen">
+                    <Bars
+                    height="100"
+                    width="100"
+                    color="#334155"
+                    ariaLabel="bars-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="dna-wrapper"
+                    visible={true}
+                    />
+                </div>
+                )}
 
-					visible={true}
-
-					height="200"
-
-					width="200"
-
-					ariaLabel="dna-loading"
-
-					wrapperStyle={{}}
-
-					wrapperClass="dna-wrapper mx-auto"
-
-				/>
-            )
-
-            }
             <div className="flex justify-center w-full my-4">
                 <div className="container flex flex-col mx-2">
 

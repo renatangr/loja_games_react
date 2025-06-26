@@ -1,3 +1,4 @@
+import { ShoppingCartIcon, UserIcon } from "@phosphor-icons/react"
 import { Link } from "react-router-dom"
 
 function Navbar() {
@@ -9,7 +10,7 @@ function Navbar() {
                 <img 
                     src="/LogoIcon.png" 
                     alt="Icon de Video Game" 
-                    className='w-10'
+                    className='w-12 h-12 justify-center'
                 />
 
                 <div className="container flex justify-between text-lg px-5 py-2">
@@ -20,8 +21,8 @@ function Navbar() {
                         Produtos
                         <Link to='/categorias' className='hover:underline'>Categorias</Link>
                         <Link to='/cadastrarcategoria' className='hover:underline'>Cadastrar Categoria</Link>
-                        Perfil
-                        Carrinho
+                        <UserIcon size={32} weight='bold' />
+                        <ShoppingCartIcon size={32} weight='bold' />
                     </div>
                 </div>
             </div>

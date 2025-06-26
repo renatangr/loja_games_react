@@ -9,14 +9,14 @@ function Home() {
                             Seja Bem Vinde!
                         </h2>
                         <p className='text-xl'>
-                            Expresse aqui seus pensamentos e opniões
+                            Aqui você encontra os melhores Games!
                         </p>
 
                         <div className="flex justify-around gap-4">
                             <div className='rounded text-white 
                                             border-white border-solid border-2 py-2 px-4'
                                 >
-                                Nova Postagem
+                                Novo Produto
                             </div>
                         </div>
                     </div>
