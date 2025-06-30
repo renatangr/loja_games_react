@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type Produto from '../../../models/Produto'
 import { PencilIcon, TrashIcon } from '@phosphor-icons/react'
 
@@ -17,10 +18,14 @@ function CardProdutos({ produto }: CardProdutosProps) {
       {/* Ícones de edição e exclusão */}
       <div className="flex justify-end gap-1 px-2 py-2 text-teal-900">
         <div>
+          <Link to= {`/editarproduto/${produto.id}`}>
           <PencilIcon size={32} />
+          </Link>
         </div>
         <div>
+          <Link to={`/deletarproduto/${produto.id}`}>
           <TrashIcon size={32} />
+          </Link>
         </div>
       </div>
 
