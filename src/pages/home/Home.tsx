@@ -1,3 +1,4 @@
+import ListaProdutos from "../../components/produtos/listaprodutos/ListaProdutos"
 
 function Home() {
     return (
@@ -30,6 +31,10 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <div className="bg-gray-300 flex">
+                 <ListaProdutos />
+            </div>
+           
         </>
     )
 }
